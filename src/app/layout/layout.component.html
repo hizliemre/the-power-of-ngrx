@@ -1,3 +1,23 @@
-<p class="text-2xl text-red-500">Tailwind works!</p>
-<i class="fa fa-user"></i>
-<router-outlet></router-outlet>
+<header class="flex-1">
+  <div class="border-b border-ngrx-100">
+    <div class="flex flex-row justify-between items-center container m-auto">
+      <div class="flex flex-row items-center">
+        <img class="p-4"
+             src="assets/ngrx.svg"
+             width="96px">
+        <h1 class="text-2xl text-center text-ngrx-600 first-letter:text-3xl first-letter:font-bold font-semibold first-letter:text-ngrx-700">The Power of NgRx</h1>
+      </div>
+      <div class="flex flex-row items-center gap-4">
+        <a [routerLink]="'/auth/sign-in'"
+           [routerLinkActive]="['active', 'outline', 'outline-ngrx-500']"
+           class="text-ngrx-800 px-4 py-3 rounded group hover:text-ngrx-300"><i class="fa fa-user mr-2 text-ngrx-300 group-hover:text-ngrx-700"></i>Sign-in</a>
+        <button class="text-ngrx-800 px-4 py-3 rounded group hover:text-ngrx-300"><i class="fa fa-heart mr-2 text-ngrx-300 group-hover:text-ngrx-700"></i>Favorites</button>
+        <button class="text-ngrx-800 px-4 py-3 rounded group hover:text-ngrx-300"><i class="fa fa-cart-shopping mr-2 text-ngrx-300 group-hover:text-ngrx-700"></i>Cart</button>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="flex-1 ">
+  <router-outlet></router-outlet>
+</main>
+<footer class="flex-1 bg-blue-200"></footer>
