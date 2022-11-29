@@ -1,23 +1,24 @@
-<header class="flex-1">
+<header>
   <div class="border-b border-ngrx-100">
-    <div class="flex flex-row justify-between items-center container m-auto">
-      <div class="flex flex-row items-center">
+    <div class="container flex flex-row items-center justify-between m-auto">
+      <a [routerLink]="'/'"
+         class="flex flex-row items-center">
         <img class="p-4"
              src="assets/ngrx.svg"
              width="96px">
-        <h1 class="text-2xl text-center text-ngrx-600 first-letter:text-3xl first-letter:font-bold font-semibold first-letter:text-ngrx-700">The Power of NgRx</h1>
-      </div>
+        <h1 class="text-2xl font-semibold text-center text-ngrx-600 first-letter:text-3xl first-letter:font-bold first-letter:text-ngrx-700">The Power of NgRx</h1>
+      </a>
       <div class="flex flex-row items-center gap-4">
         <a [routerLink]="'/auth/sign-in'"
            [routerLinkActive]="['active', 'outline', 'outline-ngrx-500']"
-           class="text-ngrx-800 px-4 py-3 rounded group hover:text-ngrx-300"><i class="fa fa-user mr-2 text-ngrx-300 group-hover:text-ngrx-700"></i>Sign-in</a>
-        <button class="text-ngrx-800 px-4 py-3 rounded group hover:text-ngrx-300"><i class="fa fa-heart mr-2 text-ngrx-300 group-hover:text-ngrx-700"></i>Favorites</button>
-        <button class="text-ngrx-800 px-4 py-3 rounded group hover:text-ngrx-300"><i class="fa fa-cart-shopping mr-2 text-ngrx-300 group-hover:text-ngrx-700"></i>Cart</button>
+           class="px-4 py-3 rounded text-ngrx-800 group hover:text-ngrx-300"><i class="mr-2 fa fa-user text-ngrx-300 group-hover:text-ngrx-700"></i>Sign-in</a>
+        <button class="px-4 py-3 rounded text-ngrx-800 group hover:text-ngrx-300"><i class="mr-2 fa fa-heart text-ngrx-300 group-hover:text-ngrx-700"></i>Favorites</button>
+        <button class="px-4 py-3 rounded text-ngrx-800 group hover:text-ngrx-300"><i class="mr-2 fa fa-cart-shopping text-ngrx-300 group-hover:text-ngrx-700"></i>Cart</button>
       </div>
     </div>
   </div>
 </header>
-<main class="flex-1 ">
+<main class="flex flex-col items-stretch justify-start flex-1 bg-gray-50">
   <router-outlet></router-outlet>
 </main>
-<footer class="flex-1 bg-blue-200"></footer>
+<footer class="h-10 bg-blue-200"></footer>
