@@ -33,7 +33,7 @@
                id="password"
                formControlName="password"
                class="w-full p-2 pr-8 border rounded active:outline-blue-700 focus:outline-blue-700">
-        <button class="absolute right-0 w-8 h-full mx-1"
+        <button class="absolute right-0 w-8 h-full mx-1 "
                 (click)="showPassword = !showPassword">
           <i class="text-gray-600 fa "
              [ngClass]="{'fa-eye-slash': !showPassword, 'fa-eye': showPassword}"></i>
@@ -42,7 +42,15 @@
     </div>
 
     <button type="submit"
-            class="py-2 mt-4 text-lg text-white border rounded bg-ngrx-700 hover:bg-ngrx-600">Sign-in</button>
+            *ngrxLet="sessionState.loading$; let loading"
+            [disabled]="loading"
+            class="py-2 mt-4 text-lg text-white border rounded bg-ngrx-700 hover:bg-ngrx-600 disabled:bg-gray-300">
+      <i class="text-gray-500 fa fa-spinner fa-spin"
+         *ngIf="loading; else notLoading"></i>
+      <ng-template #notLoading>
+        Sign-in
+      </ng-template>
+    </button>
 
   </form>
 </div>
