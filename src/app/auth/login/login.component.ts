@@ -1,18 +1,33 @@
 import { NgClass } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthApi } from '@api';
+import { SessionService } from '@state/session';
 @Component({
   selector: 'app-login',
   templateUrl: 'login.component.html',
   standalone: true,
-  imports: [NgClass],
-  styles: [`:host { @apply flex-1 flex; }`]
+  imports: [NgClass, ReactiveFormsModule, FormsModule],
+  styles: [`:host { @apply flex-1 flex; }`],
+  providers: [AuthApi],
 })
-export default class LoginComponent implements OnInit {
+export default class LoginComponent {
 
   showPassword = false;
+  form = this.#createForm();
+  #sessionState = inject(SessionService);
 
-  constructor() { }
+  login(): void {
+    this.form.markAllAsTouched();
+    if (this.form.invalid) return;
+    this.#sessionState.login(this.form.value);
+  }
 
-  ngOnInit() { }
+  #createForm() {
+    return inject(FormBuilder).group({
+      username: new FormControl('atuny0', [Validators.required]),
+      password: new FormControl('9uQFF1Lh', [Validators.required])
+    });
+  }
+
 }
