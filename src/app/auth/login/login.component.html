@@ -33,7 +33,8 @@
                id="password"
                formControlName="password"
                class="w-full p-2 pr-8 border rounded active:outline-blue-700 focus:outline-blue-700">
-        <button class="absolute right-0 w-8 h-full mx-1 "
+        <button class="absolute right-0 w-8 h-full mx-1"
+                type="button"
                 (click)="showPassword = !showPassword">
           <i class="text-gray-600 fa "
              [ngClass]="{'fa-eye-slash': !showPassword, 'fa-eye': showPassword}"></i>
