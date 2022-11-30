@@ -1,10 +1,8 @@
-const colors = require("tailwindcss/colors");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
-    colors: {
+    colors: ({ colors }) => ({
       ...colors,
       transparent: "transparent",
       current: "currentColor",
@@ -21,7 +19,7 @@ module.exports = {
         800: "#3E0E46",
         900: "#150518",
       },
-    },
-    plugins: [],
+    }),
+    plugins: [require("@tailwindcss/typography")],
   },
 };
