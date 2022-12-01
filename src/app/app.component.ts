@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LayoutComponent } from './layout/layout.component';
 
 @Component({
@@ -6,7 +6,8 @@ import { LayoutComponent } from './layout/layout.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [LayoutComponent]
+  imports: [LayoutComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'the-power-of-ngrx';

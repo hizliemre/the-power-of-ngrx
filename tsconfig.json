@@ -23,7 +23,8 @@
     "paths": {
       "@api": ["src/app/api"],
       "@models": ["src/app/models"],
-      "@state/session": ["src/app/state/session"]
+      "@state/session": ["src/app/state/session"],
+      "@ui/toastr": ["src/app/ui/toastr"]
     }
   },
   "angularCompilerOptions": {

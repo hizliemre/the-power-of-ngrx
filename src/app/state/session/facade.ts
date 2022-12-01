@@ -10,6 +10,8 @@ export class SessionService {
 
   loading$ = this.#store.select(sessionSelectors.selectLoading);
 
+  static loginActions = loginActions;
+
   login(data: Partial<{ username: string | null, password: string | null }>) {
     this.#store.dispatch(loginActions.login(data));
   }

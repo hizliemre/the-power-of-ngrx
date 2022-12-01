@@ -1,0 +1,8 @@
+<div class="flex flex-row items-center gap-1 px-4 py-2 text-white border rounded shadow"
+     *ngIf="show"
+     @flyInOut
+     [ngClass]="bgClass">
+  <i class="fa"
+     [ngClass]="icon"></i>
+  <div [innerHTML]="message"></div>
+</div>

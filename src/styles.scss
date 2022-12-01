@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "@angular/cdk/overlay-prebuilt.css";
 
 html {
   font-family: "Montserrat", sans-serif;

@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthApi } from '@api';
 import { LetModule } from '@ngrx/component';
@@ -11,6 +11,7 @@ import { SessionService } from '@state/session';
   imports: [NgClass, ReactiveFormsModule, FormsModule, NgIf, LetModule],
   styles: [`:host { @apply flex-1 flex; }`],
   providers: [AuthApi],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class LoginComponent {
 
