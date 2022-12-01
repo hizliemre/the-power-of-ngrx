@@ -23,6 +23,7 @@
     "paths": {
       "@api": ["src/app/api"],
       "@models": ["src/app/models"],
+      "@auth": ["src/app/auth"],
       "@state/session": ["src/app/state/session"],
       "@ui/toastr": ["src/app/ui/toastr"]
     }

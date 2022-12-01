@@ -1,13 +1,12 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { User } from '@models';
-import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import { createActionGroup, props } from '@ngrx/store';
 
 export const loginActions = createActionGroup({
   source: 'AUTH API',
   events: {
     'Login': props<Partial<{ username: string | null, password: string | null }>>(),
     'Login Success': props<{ user: User }>(),
-    'Login Failure': props<{ error: HttpErrorResponse }>(),
-    'Logout': emptyProps(),
+    'Login Failure': props<{ error: HttpErrorResponse }>()
   }
 })

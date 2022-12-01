@@ -13,21 +13,11 @@ const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./app/auth/auth.routes'), providers: [provideSessionEffects()] },
 ]
 
-const router = [
-  provideRouter(routes),
-]
-
 const interceptors: HttpInterceptorFn[] = [
   (req, next) => {
     req.headers.set('Content-Type', 'application/json');
     return next(req);
   }
-]
-
-const http = [
-  provideHttpClient(
-    withInterceptors(interceptors)
-  )
 ]
 
 const ngrx = [
@@ -36,18 +26,16 @@ const ngrx = [
   provideStoreDevtools({
     name: 'The Power of NgRx',
   }),
-]
-
-const states = [
   provideSessionState()
-];
+]
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideAnimations(),
-    router,
-    http,
+    provideRouter(routes),
+    provideHttpClient(
+      withInterceptors(interceptors)
+    ),
     ngrx,
-    states
   ]
 }).catch(err => console.error(err));

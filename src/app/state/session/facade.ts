@@ -9,8 +9,7 @@ export class SessionService {
   #store = inject(Store);
 
   loading$ = this.#store.select(sessionSelectors.selectLoading);
-
-  static loginActions = loginActions;
+  user$ = this.#store.select(sessionSelectors.selectUser);
 
   login(data: Partial<{ username: string | null, password: string | null }>) {
     this.#store.dispatch(loginActions.login(data));
