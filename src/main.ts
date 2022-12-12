@@ -5,13 +5,14 @@ import { provideRouter, Routes } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { provideSessionEffects, provideSessionState } from '@state/session';
+import { provideSessionState } from '@state/session';
 import { ToastrEffects } from '@ui/toastr';
 import { AppComponent } from './app/app.component';
 
 const routes: Routes = [
-  { path: '', loadComponent: () => import('./app/showcase/showcase.component') },
-  { path: 'auth', loadChildren: () => import('./app/auth/auth.routes'), providers: [provideSessionEffects()] },
+  { path: '', pathMatch: 'full', redirectTo: 'showcase' },
+  { path: 'showcase', loadChildren: () => import('./app/showcase/showcase-routes') },
+  { path: 'auth', loadChildren: () => import('./app/auth/auth.routes') },
 ]
 
 const interceptors: HttpInterceptorFn[] = [

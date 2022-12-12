@@ -6,14 +6,13 @@ import { apiActions } from './actions';
 interface ProductsState extends EntityState<Product> {
   loading: boolean;
   loaded: boolean;
-  products: Product[] | null;
 }
 
-const adapter = createEntityAdapter<Product>({
+export const adapter = createEntityAdapter<Product>({
   selectId: (item) => item.id
 })
 
-const initialState = adapter.getInitialState({
+const initialState: ProductsState = adapter.getInitialState({
   loading: false,
   loaded: false,
 });

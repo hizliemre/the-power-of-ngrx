@@ -17,7 +17,7 @@ import { SessionService } from '@state/session';
 export default class LoginComponent {
 
   showPassword = false;
-  form = this.#createForm();
+  form = this.createForm();
   sessionState = inject(SessionService);
 
   login(): void {
@@ -26,7 +26,7 @@ export default class LoginComponent {
     this.sessionState.login(this.form.value);
   }
 
-  #createForm() {
+  createForm() {
     return inject(FormBuilder).group({
       username: new FormControl('atuny0', [Validators.required]),
       password: new FormControl('9uQFF1Lh', [Validators.required])

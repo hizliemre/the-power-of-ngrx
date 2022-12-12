@@ -25,8 +25,10 @@
       "@models": ["src/app/models"],
       "@auth": ["src/app/auth"],
       "@state/session": ["src/app/state/session"],
+      "@state/products": ["src/app/state/products"],
       "@ui/toastr": ["src/app/ui/toastr"],
-      "@ui/product-card": ["src/app/ui/product-card"]
+      "@ui/product-card": ["src/app/ui/product-card"],
+      "@pages/showcase": ["src/app/showcase"]
     }
   },
   "angularCompilerOptions": {
