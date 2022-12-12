@@ -10,6 +10,7 @@ import { ToastrEffects } from '@ui/toastr';
 import { AppComponent } from './app/app.component';
 
 const routes: Routes = [
+  { path: '', loadComponent: () => import('./app/showcase/showcase.component') },
   { path: 'auth', loadChildren: () => import('./app/auth/auth.routes'), providers: [provideSessionEffects()] },
 ]
 

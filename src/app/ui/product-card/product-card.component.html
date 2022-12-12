@@ -1,0 +1,15 @@
+<ng-container *ngIf="!skeleton; else skeletonTemplate">
+  <div class="flex flex-col overflow-hidden border rounded shadow-md w-72 h-96">
+    <img [src]="product.images[0]"
+         class="object-cover h-40" />
+    <div class="p-4">
+      <h1 class="text-xl line-clamp-1"
+          [textContent]="product.title"></h1>
+      <p class="text-gray-500 line-clamp-3"
+         [textContent]="product.description"></p>
+    </div>
+  </div>
+</ng-container>
+<ng-template #skeletonTemplate>
+  <product-card-skeleton></product-card-skeleton>
+</ng-template>

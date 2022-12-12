@@ -20,6 +20,9 @@ module.exports = {
         900: "#150518",
       },
     }),
-    plugins: [require("@tailwindcss/typography")],
   },
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
+  ],
 };

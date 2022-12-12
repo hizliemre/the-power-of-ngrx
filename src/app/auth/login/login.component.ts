@@ -4,8 +4,9 @@ import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators 
 import { AuthApi } from '@api';
 import { LetModule } from '@ngrx/component';
 import { SessionService } from '@state/session';
+
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   templateUrl: 'login.component.html',
   standalone: true,
   imports: [NgClass, ReactiveFormsModule, FormsModule, NgIf, LetModule],
