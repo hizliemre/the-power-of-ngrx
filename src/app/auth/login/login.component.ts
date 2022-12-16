@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators 
 import { AuthApi } from '@api';
 import { LetModule } from '@ngrx/component';
 import { SessionService } from '@state/session';
+import { LoginPageService } from './+state';
 
 @Component({
   selector: 'login',
@@ -18,12 +19,14 @@ export default class LoginComponent {
 
   showPassword = false;
   form = this.createForm();
+  state = inject(LoginPageService);
   sessionState = inject(SessionService);
 
   login(): void {
     this.form.markAllAsTouched();
     if (this.form.invalid) return;
-    this.sessionState.login(this.form.value);
+    const { username, password } = this.form.getRawValue();
+    this.state.login({ username, password });
   }
 
   createForm() {

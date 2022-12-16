@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { provideSessionEffects } from '@state/session';
+import { provideLoginPageState } from './login/+state';
 
 const routes: Routes = [
-  { path: 'sign-in', loadComponent: () => import('./login/login.component'), providers: [provideSessionEffects()] },
+  { path: 'sign-in', loadComponent: () => import('./login/login.component'), providers: [provideLoginPageState()] },
 ];
 
 export default routes;

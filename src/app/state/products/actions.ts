@@ -3,7 +3,7 @@ import { GetAllProductsResponse } from '@models';
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
 
 export const apiActions = createActionGroup({
-  source: 'AUTH API',
+  source: 'PRODUCTS API',
   events: {
     'Get All Products': emptyProps(),
     'Get All Products Success': props<{ response: GetAllProductsResponse }>(),

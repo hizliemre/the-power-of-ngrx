@@ -28,6 +28,7 @@
       "@state/products": ["src/app/state/products"],
       "@ui/toastr": ["src/app/ui/toastr"],
       "@ui/product-card": ["src/app/ui/product-card"],
+      "@ui/card-button": ["src/app/ui/card-button"],
       "@pages/showcase": ["src/app/showcase"]
     }
   },

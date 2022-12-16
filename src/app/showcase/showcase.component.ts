@@ -17,7 +17,7 @@ export default class ShowcaseComponent implements OnInit {
   products: Product[] = [];
   skeletons = new Array(10);
   state = inject(ShowcasePageService);
-  productsService = inject(ProductsService);
+  productsState = inject(ProductsService)
 
   ngOnInit() {
     this.state.initialize();
