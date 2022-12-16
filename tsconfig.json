@@ -26,6 +26,7 @@
       "@auth": ["src/app/auth"],
       "@state/session": ["src/app/state/session"],
       "@state/products": ["src/app/state/products"],
+      "@state/cart": ["src/app/state/cart"],
       "@ui/toastr": ["src/app/ui/toastr"],
       "@ui/product-card": ["src/app/ui/product-card"],
       "@ui/card-button": ["src/app/ui/card-button"],

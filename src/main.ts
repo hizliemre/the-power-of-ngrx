@@ -5,6 +5,7 @@ import { provideRouter, Routes } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { proviceCardState } from '@state/cart';
 import { provideSessionState } from '@state/session';
 import { ToastrEffects } from '@ui/toastr';
 import { AppComponent } from './app/app.component';
@@ -38,6 +39,7 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(
       withInterceptors(interceptors)
     ),
+    proviceCardState(),
     ngrx,
   ]
 }).catch(err => console.error(err));
